@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NewGoal.css";
 
 const NewGoal = (props) => {
-  let enteredtext = "";
+  const [enteredtext, setEnteredText] = useState("");
 
   const addGoalHandler = (event) => {
     event.preventDefault();
@@ -12,18 +12,18 @@ const NewGoal = (props) => {
       text: enteredtext,
     };
 
-    console.log(newGoal);
+    setEnteredText("");
 
     props.onAddGoal(newGoal); //exectute the function pointed to, I expect to get a newGoal as an argument / parameter
   };
 
   const textChangeHandler = (event) => {
-    enteredtext = event.target.value;
+    setEnteredText(event.target.value);
   };
 
   return (
     <form className="new-goal" onSubmit={addGoalHandler}>
-      <input type="text" onChange={textChangeHandler} />
+      <input type="text" value={enteredtext} onChange={textChangeHandler} />
       <button type="submit" className="add-btn">
         Add New Goal
       </button>

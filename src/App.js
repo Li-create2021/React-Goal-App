@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import GoalList from "./components/GoalList/GoalList";
 import NewGoal from "./components/NewGoal/NewGoal";
