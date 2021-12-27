@@ -1,0 +1,9 @@
+.new-goal {
+  margin: 2rem;
+  text-align: center;
+}
+
+.add-btn {
+  background-color: blue;
+  color: white;
+}
